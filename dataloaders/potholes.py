@@ -16,7 +16,7 @@ class POTHOLESDAtaset(BaseDataSet):
     """
     def __init__(self, **kwargs):
         self.num_classes = 2
-        self.palette = palette.POTHOLE_palette
+        self.palette = palette.POTHOLES_palette
         super(POTHOLESDataset, self).__init__(**kwargs)
 
     def _set_files(self):
