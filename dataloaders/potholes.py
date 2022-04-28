@@ -10,7 +10,7 @@ from torch.utils.data import Dataset
 from torchvision import transforms
 
 
-class POTHOLESDAtaset(BaseDataSet):
+class POTHOLESDataset(BaseDataSet):
     """
     potholes dataset
     """
@@ -19,12 +19,10 @@ class POTHOLESDAtaset(BaseDataSet):
         self.palette = palette.POTHOLES_palette
         super(POTHOLESDataset, self).__init__(**kwargs)
 
-    def _set_files(self):
-        if self.split in  ["training", "testing"]:
-            self.image_dir = os.path.join(self.root, 'training', self.split)
-            self.label_dir = os.path.join(self.root, 'testing', self.split)
-            self.files = [os.path.basename(path).split('.')[0] for path in glob(self.image_dir + '*.png')]
-        else: raise ValueError(f"Invalid split name {self.split}")
+    def _set_files(self)
+        self.image_dir = os.path.join(self.root, 'training/rgb', self.split)
+        self.label_dir = os.path.join(self.root, 'label', self.split)
+        self.files = [os.path.basename(path).split('.')[0] for path in glob(self.image_dir + '*.png')]
     
     def _load_data(self, index):
         image_id = self.files[index]
