@@ -20,6 +20,7 @@ class POTHOLESDataset(BaseDataSet):
         super(POTHOLESDataset, self).__init__(**kwargs)
 
     def _set_files(self):
+        self.root = os.path.join(self.root, 'VOCdevkit/VOC2012')
         self.image_dir = os.path.join(self.root, 'training/rgb', self.split)
         self.label_dir = os.path.join(self.root, 'label', self.split)
         self.files = [os.path.basename(path).split('.')[0] for path in glob(self.image_dir + '*.png')]
