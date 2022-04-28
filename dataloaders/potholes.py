@@ -19,7 +19,7 @@ class POTHOLESDataset(BaseDataSet):
         self.palette = palette.POTHOLES_palette
         super(POTHOLESDataset, self).__init__(**kwargs)
 
-    def _set_files(self)
+    def _set_files(self):
         self.image_dir = os.path.join(self.root, 'training/rgb', self.split)
         self.label_dir = os.path.join(self.root, 'label', self.split)
         self.files = [os.path.basename(path).split('.')[0] for path in glob(self.image_dir + '*.png')]
