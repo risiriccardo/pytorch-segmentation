@@ -23,7 +23,7 @@ class POTHOLESDataset(BaseDataSet):
         self.root = os.path.join(self.root, 'pothole600')
         self.image_dir = os.path.join(self.root, 'training/rgb', self.split)
         self.label_dir = os.path.join(self.root, 'label', self.split)
-        self.files = [os.path.basename(path).split('.')[0] for path in glob(self.image_dir + '*.png')]
+        self.files = [os.path.basename(path).split('.')[0] for path in glob(self.image_dir + '/*.png')]
     
     def _load_data(self, index):
         image_id = self.files[index]
