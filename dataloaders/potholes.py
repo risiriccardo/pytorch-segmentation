@@ -21,8 +21,8 @@ class POTHOLESDataset(BaseDataSet):
 
     def _set_files(self):
         self.root = os.path.join(self.root, 'pothole600')
-        self.image_dir = os.path.join(self.root, 'training/rgb', self.split)
-        self.label_dir = os.path.join(self.root, 'label', self.split)
+        self.image_dir = sorted(glob.glob(os.path.join(self.root, 'training', 'rgb', '*.png')))
+        self.label_dir = sorted(glob.glob(os.path.join(self.root, 'training', 'label' '*.png')))
         self.files = [os.path.basename(path).split('.')[0] for path in glob(self.image_dir + '/*.png')]
     
     def _load_data(self, index):
