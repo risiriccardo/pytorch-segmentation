@@ -20,11 +20,11 @@ class POTHOLESDataset(BaseDataSet):
         super(POTHOLESDataset, self).__init__(**kwargs)
 
     def _set_files(self):
-        #self.image_dir = os.path.join(self.root, 'training', 'rgb', '*.png')
+        self.image_dir = os.path.join(self.root, 'training', 'rgb', '*.png')
         #self.label_dir = os.path.join(self.root, 'training', 'label' '*.png')
-        #self.files = [os.path.basename(path).split('.')[0] for path in glob(self.image_dir + '/*.png')]
+        self.files = sorted(os.path.basename(path).split('.')[0] for path in glob(self.image_dir + '/*.png'))
         #
-        self.files = sorted(glob.glob(os.path.join(self.root, 'training', 'rgb', '*.png')))
+        #self.files = sorted(glob.glob(os.path.join(self.root, 'training', 'rgb', '*.png')))
 #
     def _load_data(self, index):
         image_id = self.files[index]
