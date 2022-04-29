@@ -2,7 +2,7 @@ import math
 from  torch.optim.lr_scheduler import _LRScheduler
 
 class Poly(_LRScheduler):
-    def __init__(self, optimizer, num_epochs, iters_per_epoch=0, warmup_epochs=0, last_epoch=-1):
+    def __init__(self, optimizer, num_epochs, iters_per_epoch=100, warmup_epochs=0, last_epoch=-1):
         self.iters_per_epoch = iters_per_epoch
         self.cur_iter = 0
         self.N = num_epochs * iters_per_epoch
@@ -21,7 +21,7 @@ class Poly(_LRScheduler):
 
 
 class OneCycle(_LRScheduler):
-    def __init__(self, optimizer, num_epochs, iters_per_epoch=0, last_epoch=-1,
+    def __init__(self, optimizer, num_epochs, iters_per_epoch=100, last_epoch=-1,
                     momentums = (0.85, 0.95), div_factor = 25, phase1=0.3):
         self.iters_per_epoch = iters_per_epoch
         self.cur_iter = 0
