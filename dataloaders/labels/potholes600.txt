@@ -1,2 +1,2 @@
-0 pothole
-1 not_pothole
+0 not_pothole
+1 pothole
