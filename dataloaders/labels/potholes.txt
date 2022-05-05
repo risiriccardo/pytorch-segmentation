@@ -1,2 +1,3 @@
-0 not_pothole
-1 pothole
+Idx Name
+0   not_pothole
+1   pothole
