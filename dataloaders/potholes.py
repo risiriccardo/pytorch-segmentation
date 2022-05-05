@@ -29,7 +29,7 @@ class POTHOLESDataset(BaseDataSet):
         image_path = os.path.join(self.image_dir, image_id + '.png')
         label_path = os.path.join(self.label_dir, image_id + '.png')
         image = np.asarray(Image.open(image_path).convert('RGB'), dtype=np.float32)
-        label = np.asarray(Image.open(label_path), dtype=np.int32) - 1 # from -1 to 149
+        label = np.asarray(Image.open(label_path), dtype=np.int32) 
         return image, label, image_id
     
 class POTHOLES(BaseDataLoader):
